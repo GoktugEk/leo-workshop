@@ -1,4 +1,4 @@
-program goktug_ankara_leo_workshop.aleo {
+program goktug_leo_workshop.aleo {
 
     mapping account: address => u64;
 

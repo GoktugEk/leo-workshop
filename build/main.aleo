@@ -1,4 +1,4 @@
-program goktug_ankara_leo_workshop.aleo;
+program goktug_leo_workshop.aleo;
 
 record token:
     owner as address.private;
@@ -13,7 +13,7 @@ function mint_public:
     input r0 as address.public;
     input r1 as u64.public;
     async mint_public r0 r1 into r2;
-    output r2 as goktug_ankara_leo_workshop.aleo/mint_public.future;
+    output r2 as goktug_leo_workshop.aleo/mint_public.future;
 
 finalize mint_public:
     input r0 as address.public;
@@ -34,7 +34,7 @@ function transfer_public:
     input r0 as address.public;
     input r1 as u64.public;
     async transfer_public self.caller r0 r1 into r2;
-    output r2 as goktug_ankara_leo_workshop.aleo/transfer_public.future;
+    output r2 as goktug_leo_workshop.aleo/transfer_public.future;
 
 finalize transfer_public:
     input r0 as address.public;
@@ -67,7 +67,7 @@ function transfer_priv_to_pub:
     cast r0.owner r3 into r4 as token.record;
     async transfer_priv_to_pub r1 r2 into r5;
     output r4 as token.record;
-    output r5 as goktug_ankara_leo_workshop.aleo/transfer_priv_to_pub.future;
+    output r5 as goktug_leo_workshop.aleo/transfer_priv_to_pub.future;
 
 finalize transfer_priv_to_pub:
     input r0 as address.public;
@@ -83,7 +83,7 @@ function transfer_pub_to_priv:
     cast r0 r1 into r2 as token.record;
     async transfer_pub_to_priv self.caller r1 into r3;
     output r2 as token.record;
-    output r3 as goktug_ankara_leo_workshop.aleo/transfer_pub_to_priv.future;
+    output r3 as goktug_leo_workshop.aleo/transfer_pub_to_priv.future;
 
 finalize transfer_pub_to_priv:
     input r0 as address.public;
